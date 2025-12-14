@@ -19,14 +19,12 @@ El objetivo principal es identificar patrones relacionados con la **maternidad a
 
 ## Estructura del proyecto
 
-/nacimientos-argentina/
-│
-├── README.md # Este archivo
-├── notebooks/
-│ └── analisis_nacimientos.ipynb # Notebook con todo el análisis
-├── data/
-│ └── nacimientos2023.csv # Dataset original
-└── images/ # Gráficos exportados (opcional)
+| Carpeta / Archivo        | Descripción                                           |
+|--------------------------|-------------------------------------------------------|
+| notebooks/               | Notebook principal (`analisis_nacimientos.ipynb`).   |
+| data/                    | Dataset original (`nacimientos2023.csv`).            |
+| images/                  | Gráficos exportados (opcional).                      |
+| README.md                | Descripción del proyecto.                             |
 
 
 ## Contenido del análisis
