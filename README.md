@@ -23,7 +23,7 @@ El objetivo principal es identificar patrones relacionados con la **maternidad a
 |--------------------------|-------------------------------------------------------|
 | notebooks/               | Notebook principal (`analisis_nacimientos.ipynb`).   |
 | data/                    | Dataset original (`nacimientos2023.csv`).            |
-| images/                  | Gráficos exportados (opcional).                      |
+| images/                  | Gráficos exportados.                                  |
 | README.md                | Descripción del proyecto.                             |
 
 
