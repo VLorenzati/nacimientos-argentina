@@ -1,8 +1,49 @@
 # Análisis de Nacimientos en Argentina (2023)
 
-Este proyecto realiza un análisis exploratorio de los datos de **nacidos vivos registrados en la República Argentina**, utilizando el dataset `nacimientos2023.csv` proporcionado por el **Ministerio de Salud – Dirección de Estadística e Información en Salud (DEIS)**.  
+Este proyecto analiza los nacimientos registrados en Argentina a partir de datos oficiales, con el objetivo de explorar patrones asociados a la edad materna, el nivel educativo y la distribución territorial. El trabajo combina técnicas de Análisis Exploratorio de Datos (EDA) y Ciencia de Datos, incorporando un enfoque de clustering para identificar perfiles maternos diferenciados.
 
-El objetivo principal es identificar patrones relacionados con la **maternidad adolescente**, el **nivel educativo de las madres** y la **distribución geográfica de los nacimientos**.
+## Objetivos
+
+Analizar la distribución de los nacimientos según edad materna y nivel educativo.
+
+Estudiar la maternidad adolescente desde una perspectiva territorial y educativa.
+
+Calcular tasas y proporciones que permitan comparar provincias más allá de los valores absolutos.
+
+Identificar perfiles maternos mediante técnicas de clustering no supervisado.
+
+---
+## Fuente de datos
+
+Los datos utilizados provienen de registros administrativos oficiales de nacimientos en Argentina (DEIS – Ministerio de Salud). Cada registro original representa una agregación de nacimientos con características comunes.
+
+Para los análisis territoriales y visualizaciones geográficas se utilizó un shapefile de las provincias argentinas, empleado para la correcta representación espacial de los indicadores calculados (tasas y distribuciones provinciales).
+
+---
+## Principales insights
+
+Las provincias con mayor población concentran la mayor cantidad absoluta de nacimientos, pero las tasas más altas de maternidad adolescente se observan en provincias del NEA y NOA.
+
+Existe una asociación negativa clara entre nivel educativo y maternidad adolescente: a mayor nivel educativo, menor probabilidad de maternidad antes de los 20 años.
+
+Los perfiles maternos identificados mediante clustering muestran una progresión consistente entre edad y educación, desde maternidades tempranas con educación media hasta maternidades tardías con educación superior consolidada.
+
+
+
+---
+
+
+## Estructura del proyecto
+
+| Carpeta / Archivo        | Descripción                                           |
+|--------------------------|-------------------------------------------------------|
+| notebooks/               | Notebook principal (`analisis_nacimientos.ipynb`).    |
+| data/                    | Dataset original (`nacimientos2023.csv`).             |
+|                          | provincias_shapefile/                                 |                       
+| images/                  | Gráficos exportados.                                  |
+| reports/                 | `Informe_Analisis_Nacimientos.pdf`                      |
+| README.md                | Descripción del proyecto.                             |
+
 
 ---
 
@@ -14,45 +55,16 @@ El objetivo principal es identificar patrones relacionados con la **maternidad a
 - Matplotlib  
 - Seaborn  
 - Google Colab
-
+- scikit-learn
+ 
 ---
 
-## Estructura del proyecto
+## Autor
 
-| Carpeta / Archivo        | Descripción                                           |
-|--------------------------|-------------------------------------------------------|
-| notebooks/               | Notebook principal (`analisis_nacimientos.ipynb`).   |
-| data/                    | Dataset original (`nacimientos2023.csv`).            |
-| images/                  | Gráficos exportados.                                  |
-| README.md                | Descripción del proyecto.                             |
+**Valentino Lorenzati**
+
+Proyecto desarrollado con fines academicos y de portafolio en analisis y ciencia de datos.
 
 
-## Contenido del análisis
-
-1. **Preparación del dataset**  
-   - Expansión de registros según la columna `nacimientos_cantidad` para que cada fila represente un nacimiento individual.  
-    
-
-2. **Exploración de datos**  
-   - Distribución de edad de las madres.  
-   - Frecuencia de nivel educativo por edad.  
-   - Identificación de posibles errores en la carga de datos (ej. madres adolescentes con nivel universitario completo).  
-
-3. **Insights principales**  
-   - **Inconsistencias menores:** Se identificaron 92 casos (~0,3 %) de madres de 15 a 19 años con nivel universitario completo, posiblemente debido a errores administrativos.  
-   - **Maternidad adolescente por provincia:** Las tasas más altas se observan en provincias del NEA y NOA, particularmente Formosa, Misiones y Chaco.  
-   - **Relación con nivel educativo:** A menor nivel educativo, mayor es la probabilidad de maternidad adolescente. Mujeres sin secundaria completa presentan ~20 % de probabilidad, mientras que quienes completaron estudios terciarios o universitarios casi no presentan maternidad adolescente.  
-
-4. **Visualizaciones**  
-   - Histogramas de edad de madres.  
-   - Barras de nivel educativo de madres adolescentes.  
-
----
-
-## Cómo reproducir el análisis
-
-1. Abrir el notebook `notebooks/analisis_nacimientos.ipynb` en **Google Colab** o Jupyter.  
-2. Subir el archivo `nacimientos2023.csv` a la carpeta `/data/`.  
-3. Ejecutar las celdas en orden: limpieza → exploración → visualizaciones → insights.  
 
 
